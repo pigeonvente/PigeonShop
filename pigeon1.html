@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Pigeon_messager_bleu</title>
+    <!--titre de l'onglet-->
+  </head>
+  <body>
+    <div class="menu">
+      <a href="notrehistoire.html" id="logo" class="nobbo">    <!--défini le bouton du logo avec une classe par défaut--> 
+        <img src="pigeonlogo.png" alt="Pigeon">     <!--src=image à charger, alt=texte en cas d'erreur--> 
+      </a>
+      <a href="pigeonsite.html" class="menubtn menubtn1">Menu</a>
+      <a href="notrehistoire.html" class="menubtn">Notre histoire</a>
+    </div>
+
+    <div class="produit">
+        <div class="pigeonimg">
+            <img src="pigeon1.png" alt="pigeon">
+        </div>
+        <div class="infos">
+            <p class="title">Pigeon messager bleu</p>
+            <div class="desc">
+                Âge : 1 an<br>
+                Lieu d'élevage : France<br>
+                Sexe : Mâle<br>
+                Race : Pigeon Biset<br>
+                <br>
+                Prix : 25€
+            </div>
+        </div>
+    </div>
+
+    <div class="panier">
+        <a href="login.html">
+            <img src="ajpa.png">
+        </a>
+    </div>
+      
+
+      <div id="fondnoir">
+        Edgar, Antoine, Jianing<br>
+        2E StJdL<br>
+        Certaines images ont été générées avec des IA.
+      </div>
+        
+      </div>
+    </div>
+    
+    <style>
+      body {
+        margin: 0;                   /*Enlève les bords blancs autour de la page*/
+        padding: 0;
+        background: linear-gradient(to bottom, #bdbdbd 0%, #f5f5f5 100%);   /*dégradé de gris*/
+      }
+      
+
+      .menubtn {
+        padding: 15px 25px;
+        background-color: white; /* couleur du bouton */
+        color: black;              /* couleur du texte */
+        border: none;              /* on enlève le bord par défaut */
+        font-size: 30px;           /* taille du texte */
+        cursor: pointer;
+        text-decoration: none;     /*enlève le surlignage*/
+      }
+      
+      .menubtn:hover {
+        outline: 2px solid #000; /* épaisseur 2px, ligne pleine, couleur noire */
+        z-index: 10;
+      }
+
+      .menu {
+        display: flex;
+        width: 100%;             /*Largeur du rectangle qui couvre toute la page*/
+        height: 9rem;           /*Hauteur du rectangle*/
+        background-color: white; /*Couleur de remplissage*/
+        padding-left: 1rem;
+        padding-top: 1rem;
+        box-sizing: border-box;
+        align-items: center;
+        gap: 0px;
+      }
+      
+      #logo {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        margin-right: 10rem;
+      }
+      #logo:hover {
+        transform: scale(1.2);
+      }
+
+      #logo img {            /*img car on change l'image du logo, et pas le logo lui-même. Sinon l'image du logo dépasserait du logo*/
+        height: 110px;
+      }
+     
+      .produit {
+        width: 90%;
+        margin: 3rem auto 5rem;
+        display: flex;
+        justify-content: center; /* CENTRE horizontalement l'image et le texte */
+        gap: 17rem;
+      }
+      
+      .pigeonimg {
+        max-width: 600px;
+        width: 10rem;
+        margin-top: 5rem;
+        transition: transform 0.3s ease;
+      }
+      .pigeonimg img {
+        border-radius: 1rem;
+      }
+      .pigeonimg:hover {
+        transform: scale(1.2);
+      }
+
+      .desc {
+        width: 30rem;
+        height: 15rem;
+        background-color: white;
+        border-radius: 1rem;
+        padding-top: 1rem;
+        padding-left: 2rem;
+        box-sizing: border-box;
+        font-size:1.5rem;
+      }
+
+
+      .title {
+        margin-left: 3rem;
+        font-size: 3rem;
+      }
+      
+      .nobbo {
+        background: none;   /*Enlève la couleur grise de fond du bouton*/
+        border: none;       /*Enlève le bord rectangulaire*/
+        outline: none;      /*Enlève le contour bleu qui apparaît parfois quand on clique*/
+      }
+
+      .panier {
+        width:10rem;
+        margin: 0rem auto 3rem;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+      
+      .panier:hover {
+        transform : scale(1.2);
+      }
+
+      #fondnoir {
+        position: relative;
+        width: 100%;
+        height: 8rem;
+        background-color: black;
+        padding: 2rem 7rem;
+        box-sizing: border-box;        /*pour ne pas compter le padding dans la taille et éviter le débordement*/
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+
+      
+    </style>
+    
+  </body>
+</html>
