@@ -13,7 +13,9 @@
       </a>
       <a href="pigeonsite.html" class="menubtn menubtn1">Menu</a>
       <a href="notrehistoire.html" class="menubtn">Notre histoire</a>
+      <a href="login.html" class="monpanier">Mon panier</a>
     </div>
+    <div class="menudeg"></div>
     <div id="adec" class="nobbo">
         <img src="adec.png" alt="[image]"> 
             <button id="dec" class="cliquable nobbo">
@@ -80,7 +82,7 @@
     <style>
       body {
         margin: 0;                   /*Enlève les bords blancs autour de la page*/
-        padding: 0;
+        padding-top: 9rem;
         background: linear-gradient(to bottom, #bdbdbd 0%, #f5f5f5 100%);   /*dégradé de gris*/
       }
       
@@ -117,6 +119,9 @@
 
       }
       .menu {
+        top: 0px;
+        left: 0px;
+        position: fixed;
         display: flex;
         width: 100%;             /*Largeur du rectangle qui couvre toute la page*/
         height: 9rem;           /*Hauteur du rectangle*/
@@ -126,6 +131,33 @@
         box-sizing: border-box;
         align-items: center;
         gap: 0px;
+        z-index: 1000;
+      }
+      .menudeg {
+        top: 9rem;
+        left: 0px;
+        position: fixed;
+        width: 100%;
+        height: 1rem;
+        background: linear-gradient(to bottom, white, transparent);
+        z-index: 1000;
+      }
+
+      .monpanier {
+        margin-left: auto;      /*à droite au max... */
+        margin-right: 4rem;     /* ... mais pas trop non plus*/
+        border-radius: 1rem;
+        background-color: rgb(152, 200, 212);
+        padding: 10px 20px;
+        color: black;              /* couleur du texte */
+        border: none;              /* on enlève le bord par défaut */
+        font-size: 30px;           /* taille du texte */
+        cursor: pointer;
+        text-decoration: none;     /*enlève le surlignage*/
+        transition : transform 0.2s ease;
+      }
+      .monpanier:hover {
+        transform: scale(1.2);
       }
       
       #logo {
@@ -138,7 +170,7 @@
       }
 
       #logo img {            /*img car on change l'image du logo, et pas le logo lui-même. Sinon l'image du logo dépasserait du logo*/
-        height: 110px;
+        height: 100px;
       }
       
       #adec {

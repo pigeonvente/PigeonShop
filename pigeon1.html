@@ -12,7 +12,9 @@
       </a>
       <a href="pigeonsite.html" class="menubtn menubtn1">Menu</a>
       <a href="notrehistoire.html" class="menubtn">Notre histoire</a>
+      <a href="login.html" class="monpanier">Mon panier</a>
     </div>
+    <div class="menudeg"></div>
 
     <div class="produit">
         <div class="pigeonimg">
@@ -20,11 +22,15 @@
         </div>
         <div class="infos">
             <p class="title">Pigeon messager bleu</p>
+            <div class="stars">
+              <img src="3stars.png" alt="3 stars">
+            </div>
             <div class="desc">
                 Âge : 1 an<br>
                 Lieu d'élevage : France<br>
                 Sexe : Mâle<br>
                 Race : Pigeon Biset<br>
+                Taille : 31cm<br>
                 <br>
                 Prix : 25€
             </div>
@@ -46,11 +52,12 @@
         
       </div>
     </div>
+
     
     <style>
       body {
         margin: 0;                   /*Enlève les bords blancs autour de la page*/
-        padding: 0;
+        padding-top: 9rem;
         background: linear-gradient(to bottom, #bdbdbd 0%, #f5f5f5 100%);   /*dégradé de gris*/
       }
       
@@ -71,6 +78,10 @@
       }
 
       .menu {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 1000;
         display: flex;
         width: 100%;             /*Largeur du rectangle qui couvre toute la page*/
         height: 9rem;           /*Hauteur du rectangle*/
@@ -80,6 +91,32 @@
         box-sizing: border-box;
         align-items: center;
         gap: 0px;
+      }
+      .menudeg {
+        top: 9rem;
+        left: 0px;
+        position: fixed;
+        width: 100%;
+        height: 1rem;
+        background: linear-gradient(to bottom, white, transparent);
+        z-index: 1000;
+      }
+
+      .monpanier {
+        margin-left: auto;       /*voir pigeonsite.html*/
+        margin-right: 4rem;
+        border-radius: 1rem;
+        background-color: rgb(152, 200, 212);
+        padding: 10px 20px;
+        color: black;              /* couleur du texte */
+        border: none;              /* on enlève le bord par défaut */
+        font-size: 30px;           /* taille du texte */
+        cursor: pointer;
+        text-decoration: none;     /*enlève le surlignage*/
+        transition : transform 0.2s ease;
+      }
+      .monpanier:hover {
+        transform: scale(1.2);
       }
       
       #logo {
@@ -92,7 +129,7 @@
       }
 
       #logo img {            /*img car on change l'image du logo, et pas le logo lui-même. Sinon l'image du logo dépasserait du logo*/
-        height: 110px;
+        height: 100px;
       }
      
       .produit {
@@ -100,20 +137,25 @@
         margin: 3rem auto 5rem;
         display: flex;
         justify-content: center; /* CENTRE horizontalement l'image et le texte */
-        gap: 17rem;
+        align-items: center;     /* CENTRE verticalement l'img et le txt*/
+        gap: 10rem;
       }
       
       .pigeonimg {
-        max-width: 600px;
-        width: 10rem;
+        max-width: 800px;
         margin-top: 5rem;
         transition: transform 0.3s ease;
       }
       .pigeonimg img {
+        width: 30rem;
         border-radius: 1rem;
       }
       .pigeonimg:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
+      }
+
+      .stars{
+        width: 5rem;
       }
 
       .desc {
@@ -125,11 +167,13 @@
         padding-left: 2rem;
         box-sizing: border-box;
         font-size:1.5rem;
+        margin-top: 3rem;
       }
 
 
       .title {
-        margin-left: 3rem;
+        margin-top: 1rem;
+        margin-left: 1rem;
         font-size: 3rem;
       }
       
