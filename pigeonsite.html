@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="menu">
-      <a href="notrehistoire.html" id="logo" class="nobbo">    <!--défini le bouton du logo avec une classe par défaut--> 
+      <a href="notrehistoire.html" id="logo">
         <img src="pigeonlogo.png" alt="Pigeon">     <!--src=image à charger, alt=texte en cas d'erreur--> 
       </a>
       <a href="pigeonsite.html" class="menubtn menubtn1">Menu</a>
@@ -16,36 +16,36 @@
       <a href="login.html" class="monpanier">Mon panier</a>
     </div>
     <div class="menudeg"></div>
-    <div id="adec" class="nobbo">
+    <div id="adec">
         <img src="adec.png" alt="[image]"> 
-            <button id="dec" class="cliquable nobbo">
+            <button id="dec" class="cliquable">
                 <img src="dec.png" alt="découvrir">
             </button>
     </div>
 
       <div class="grille">
-        <div id="pigeonvente1" class="nobbo pres">       <!-- 'nobbo' : abréaviation pour no border/backround/outline-->
+        <div id="pigeonvente1" class="pres">
           <img src="pigeonvente1.png" alt="pigeon1">
-          <a href="pigeon1.html">
-            <img src="dec.png" alt="Ajouter au panier" class="panier">
+          <a href="pigeon1.html" class="panier">
+            <img src="dec.png" alt="Ajouter au panier">
           </a>
         </div>
-        <div id="pigeonvente2" class="nobbo pres"> 
+        <div id="pigeonvente2" class="pres"> 
           <img src="pigeonvente2.png" alt="pigeon2">
-          <a href="pigeon2.html">
-            <img src="dec.png" alt="Ajouter au panier" class="panier">
+          <a href="pigeon2.html" class="panier">
+            <img src="dec.png" alt="Ajouter au panier">
           </a>
         </div>
-        <div id="pigeonvente3" class="nobbo pres">
+        <div id="pigeonvente3" class="pres">
           <img src="pigeonvente3.png" alt="pigeon3">
-          <a href="pigeon3.html">
-            <img src="dec.png" alt="Ajouter au panier" class="panier">
+          <a href="pigeon3.html" class="panier">
+            <img src="dec.png" alt="Ajouter au panier">
           </a>
         </div>
-        <div id="pigeonvente4" class="nobbo pres">
+        <div id="pigeonvente4" class="pres">
           <img src="pigeonvente4.png" alt="pigeon4">
-          <a href="pigeon4.html">
-            <img src="dec.png" alt="Ajouter au panier" class="panier">
+          <a href="pigeon4.html" class="panier">
+            <img src="dec.png" alt="Ajouter au panier">
           </a>
         </div>
       </div>
@@ -189,6 +189,8 @@
         bottom: 1rem;
         left: 50%;
         transform: translateX(-50%);
+        background: none;
+        border: none;
       }
       
       
@@ -197,11 +199,7 @@
         top: 50rem;
       }
       
-      .nobbo {
-        background: none;   /*Enlève la couleur grise de fond du bouton*/
-        border: none;       /*Enlève le bord rectangulaire*/
-        outline: none;      /*Enlève le contour bleu qui apparaît parfois quand on clique*/
-      }
+
       
       .cliquable {
         z-index: 10;
@@ -216,17 +214,21 @@
       }
 
       .pres {
-        position: relative
+        position: relative;
       }
 
       .panier {
         position: absolute;
-        top: 31rem;
         left: 6.3rem;
+        bottom: 3rem;
         z-index: 10;
         cursor: pointer;
         transition: transform 0.2s ease;
       }
+      .panier:focus-visible {
+        outline: 2px solid black;
+      }
+      
       
       .panier:hover {
         transform : scale(1.2);
