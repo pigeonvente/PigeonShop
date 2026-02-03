@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!--Indique l'encodage des caractères (pour tapper des accents par exemple) ChaGPT me dit que c'est important-->
+    <title>PigeonShop</title>
+    <!--titre de l'onglet-->
+  </head>
+  <body>
+    <div class="menu">
+      <a href="notrehistoire.html" id="logo">
+        <img src="pigeonlogo.png" alt="Pigeon">     <!--src=image à charger, alt=texte en cas d'erreur--> 
+      </a>
+      <a href="pigeonsite.html" class="menubtn menubtn1">Menu</a>
+      <a href="notrehistoire.html" class="menubtn">Notre histoire</a>
+      <a href="login.html" class="monpanier">Mon panier</a>
+    </div>
+    <div class="menudeg"></div>
+    <p class="nh">Notre Histoire</p>
+    <div class="presentation">
+        <div class="nhimg">
+            <img src="nhimg.png">
+        </div>
+        <p>
+            Nous nous levons très tôt chaque matin et nous parcourront à pied trois bon kilomètres qui nous paraissent durait des heures. Dès que nous arrivons à notre emplacement sur la place centrale du village, Edgar installe les cages ainsi que les pigeons pendant que Jianing nettoie l’étale. Pendant ce temps, je m’occupe de réparer les cages abimées car pour moi, nos pigeons sont bien plus que de simples pigeons. Ce sont des êtres formidables dotés d’une conscience et d’une intelligence dépassant, pour les pigeons blancs, celle de l’homme. Un soir, une tempête fit rage et dévasta le village. Par chance, nous pûmes sauver quelques pigeons. 
+        </p>
+    </div>
+     <div class="presentation2">
+        <p>
+            Depuis ce jour, nous vivons dans le froid la faim et la douleur. Ce jour, nous avons compris que nous ne pourrons jamais plus vivre comme avant. C’est pourquoi nous vous prions de bien vouloir acheter nos derniers pigeons d’excellences afin de nous aider à nous relever de cette catastrophe. 
+        </p>
+    </div>   
+
+    <div id="baspage"></div>                         <!--repère pour scroller en bas de page automatiquement si le bouton 'découvrir' est cliqué-->
+      <div id="fondnoir">
+        <div class="textinfo">
+          Edgar, Antoine, Jianing<br>
+          2E StJdL<br>
+          Certaines images ont été générées avec des IA.
+        </div>
+        <a class="contact" href="https://forms.office.com/Pages/ResponsePage.aspx?id=LRErB1ro4ECRas-oLsTmIGsKKW1nI4dEgHRkYGL-qypUNEpSRDVTTDMzUk9CUUFISFNWT0gzOFQ5Ry4u">Nous contacter</a>
+      </div>
+        
+      </div>
+    </div>
+
+    <style>
+      body {
+        margin: 0;                   /*Enlève les bords blancs autour de la page*/
+        padding-top: 9rem;
+        background: linear-gradient(to bottom, #bdbdbd 0%, #f5f5f5 100%);   /*dégradé de gris*/
+      }
+      
+      .menubtn {
+        padding: 15px 25px;
+        background-color: white; /* couleur du bouton */
+        color: black;              /* couleur du texte */
+        border: none;              /* on enlève le bord par défaut */
+        font-size: 30px;           /* taille du texte */
+        cursor: pointer;
+        text-decoration: none;     /*enlève le surlignage*/
+      }
+      .menubtn:hover {
+        outline: 2px solid #000; /* épaisseur 2px, ligne pleine, couleur noire */
+        z-index: 10;
+      }
+      .menu {
+        top: 0px;
+        left: 0px;
+        position: fixed;
+        display: flex;
+        width: 100%;             /*Largeur du rectangle qui couvre toute la page*/
+        height: 9rem;           /*Hauteur du rectangle*/
+        background-color: white; /*Couleur de remplissage*/
+        padding-left: 1rem;
+        padding-top: 1rem;
+        box-sizing: border-box;
+        align-items: center;
+        gap: 0px;
+        z-index: 1000;
+      }
+      .menudeg {
+        top: 9rem;
+        left: 0px;
+        position: fixed;
+        width: 100%;
+        height: 1rem;
+        background: linear-gradient(to bottom, white, transparent);
+        z-index: 1000;
+      }
+
+      
+      #logo {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        margin-right: 10rem;
+      }
+      #logo:hover {
+        transform: scale(1.2);
+      }
+      #logo img {            /*img car on change l'image du logo, et pas le logo lui-même. Sinon l'image du logo dépasserait du logo*/
+        height: 100px;
+      }
+
+      .monpanier {
+        margin-left: auto;      /*à droite au max... */
+        margin-right: 4rem;     /* ... mais pas trop non plus*/
+        border-radius: 1rem;
+        background-color: rgb(152, 200, 212);
+        padding: 10px 20px;
+        color: black;              /* couleur du texte */
+        border: none;              /* on enlève le bord par défaut */
+        font-size: 30px;           /* taille du texte */
+        cursor: pointer;
+        text-decoration: none;     /*enlève le surlignage*/
+        transition : transform 0.2s ease;
+      }
+      .monpanier:hover {
+        transform: scale(1.2);
+      }
+
+      .nh {
+        font-size: 5rem;
+        margin: 6rem auto 0px;
+        text-align: center;
+      }
+      .presentation {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 3rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5rem;
+        width: 90%;
+        font-size: 2rem;
+      }
+      .presentation p {
+        margin-top: 0px;
+      }
+      .nhimg {
+        width: 35rem;
+      }
+      .nhimg img {
+        width: 35rem;
+        border-radius: 1rem;
+      }
+      .presentation2 {
+        margin-top: 0rem;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 2rem;
+      }
+
+    .loginimg {
+        position: absolute;
+        left: 0px;
+        top: 5rem;
+        width: 30rem;
+      }
+
+      #fondnoir {
+        margin-top: 6rem;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start; /* Aligne tout au début (à gauche) */
+        gap: 0rem;
+        width: 100%;
+        height: 8rem;
+        background-color: black;
+        padding: 2rem 7rem;
+        box-sizing: border-box;        /*pour ne pas compter le padding dans la taille et éviter le débordement*/
+      }
+      .textinfo {
+        color: white;
+        font-family: Arial, sans-serif;
+      }
+      .contact {
+        color: white;
+        margin-left: 20rem;
+      }
+     
+
+      
+
+      
+    </style>
+    
+  </body>
+</html>
