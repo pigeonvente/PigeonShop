@@ -8,57 +8,55 @@
   </head>
   <body>
     <div class="menu">
-      <a href="notrehistoire.html" id="logo">
+      <a href="notrehistoire.html" id="logo" class="nobbo">    <!--défini le bouton du logo avec une classe par défaut--> 
         <img src="pigeonlogo.png" alt="Pigeon">     <!--src=image à charger, alt=texte en cas d'erreur--> 
       </a>
       <a href="pigeonsite.html" class="menubtn menubtn1">Menu</a>
       <a href="notrehistoire.html" class="menubtn">Notre histoire</a>
-      <a href="login.html" class="monpanier">Mon panier</a>
     </div>
-    <div class="menudeg"></div>
-    <div id="adec">
+    <div id="adec" class="nobbo">
         <img src="adec.png" alt="[image]"> 
-            <button id="dec" class="cliquable">
+            <button id="dec" class="cliquable nobbo">
                 <img src="dec.png" alt="découvrir">
             </button>
     </div>
 
-    <div class="grille">
-        <div id="pigeonvente1" class="pres">
+      <div class="grille">
+        <div id="pigeonvente1" class="nobbo pres">       <!-- 'nobbo' : abréaviation pour no border/backround/outline-->
           <img src="pigeonvente1.png" alt="pigeon1">
-          <a href="pigeon1.html" class="panier">
-            <img src="dec.png" alt="Ajouter au panier">
+          <a href="pigeon1.html">
+            <img src="dec.png" alt="Ajouter au panier" class="panier">
           </a>
         </div>
-        <div id="pigeonvente2" class="pres"> 
+        <div id="pigeonvente2" class="nobbo pres"> 
           <img src="pigeonvente2.png" alt="pigeon2">
-          <a href="pigeon2.html" class="panier">
-            <img src="dec.png" alt="Ajouter au panier">
+          <a href="pigeon2.html">
+            <img src="dec.png" alt="Ajouter au panier" class="panier">
           </a>
         </div>
-        <div id="pigeonvente3" class="pres">
+        <div id="pigeonvente3" class="nobbo pres">
           <img src="pigeonvente3.png" alt="pigeon3">
-          <a href="pigeon3.html" class="panier">
-            <img src="dec.png" alt="Ajouter au panier">
+          <a href="pigeon3.html">
+            <img src="dec.png" alt="Ajouter au panier" class="panier">
           </a>
         </div>
-        <div id="pigeonvente4" class="pres">
+        <div id="pigeonvente4" class="nobbo pres">
           <img src="pigeonvente4.png" alt="pigeon4">
-          <a href="pigeon4.html" class="panier">
-            <img src="dec.png" alt="Ajouter au panier">
+          <a href="pigeon4.html">
+            <img src="dec.png" alt="Ajouter au panier" class="panier">
           </a>
         </div>
-    </div>
+      </div>
       
 
-    <div id="baspage"></div>                         <!--repère pour scroller en bas de page automatiquement si le bouton 'découvrir' est cliqué-->
-    <div id="fondnoir">
-        <div class="textinfo">
-            Edgar, Antoine, Jianing<br>
-            2E StJdL<br>
-            Certaines images ont été générées avec des IA.
-        </div>
-        <a class="contact" href="https://forms.office.com/Pages/ResponsePage.aspx?id=LRErB1ro4ECRas-oLsTmIGsKKW1nI4dEgHRkYGL-qypUNEpSRDVTTDMzUk9CUUFISFNWT0gzOFQ5Ry4u">Nous contacter</a>
+      <div id="baspage"></div>                         <!--repère pour scroller en bas de page automatiquement si le bouton 'découvrir' est cliqué-->
+      <div id="fondnoir">
+        <div id="noms">Edgar, Antoine, Jianing</div>
+        <div id="classe">2E StJdL</div>
+        <div id="info">Certaines images ont été générées avec des IA.</div>
+      </div>
+        
+      </div>
     </div>
     
     <script>                                              <!--Javascript-->
@@ -82,7 +80,7 @@
     <style>
       body {
         margin: 0;                   /*Enlève les bords blancs autour de la page*/
-        padding-top: 9rem;
+        padding: 0;
         background: linear-gradient(to bottom, #bdbdbd 0%, #f5f5f5 100%);   /*dégradé de gris*/
       }
       
@@ -119,9 +117,6 @@
 
       }
       .menu {
-        top: 0px;
-        left: 0px;
-        position: fixed;
         display: flex;
         width: 100%;             /*Largeur du rectangle qui couvre toute la page*/
         height: 9rem;           /*Hauteur du rectangle*/
@@ -131,33 +126,6 @@
         box-sizing: border-box;
         align-items: center;
         gap: 0px;
-        z-index: 1000;
-      }
-      .menudeg {
-        top: 9rem;
-        left: 0px;
-        position: fixed;
-        width: 100%;
-        height: 1rem;
-        background: linear-gradient(to bottom, white, transparent);
-        z-index: 1000;
-      }
-
-      .monpanier {
-        margin-left: auto;      /*à droite au max... */
-        margin-right: 4rem;     /* ... mais pas trop non plus*/
-        border-radius: 1rem;
-        background-color: rgb(152, 200, 212);
-        padding: 10px 20px;
-        color: black;              /* couleur du texte */
-        border: none;              /* on enlève le bord par défaut */
-        font-size: 30px;           /* taille du texte */
-        cursor: pointer;
-        text-decoration: none;     /*enlève le surlignage*/
-        transition : transform 0.2s ease;
-      }
-      .monpanier:hover {
-        transform: scale(1.2);
       }
       
       #logo {
@@ -170,7 +138,7 @@
       }
 
       #logo img {            /*img car on change l'image du logo, et pas le logo lui-même. Sinon l'image du logo dépasserait du logo*/
-        height: 100px;
+        height: 110px;
       }
       
       #adec {
@@ -189,8 +157,6 @@
         bottom: 1rem;
         left: 50%;
         transform: translateX(-50%);
-        background: none;
-        border: none;
       }
       
       
@@ -199,7 +165,11 @@
         top: 50rem;
       }
       
-
+      .nobbo {
+        background: none;   /*Enlève la couleur grise de fond du bouton*/
+        border: none;       /*Enlève le bord rectangulaire*/
+        outline: none;      /*Enlève le contour bleu qui apparaît parfois quand on clique*/
+      }
       
       .cliquable {
         z-index: 10;
@@ -214,21 +184,17 @@
       }
 
       .pres {
-        position: relative;
+        position: relative
       }
 
       .panier {
         position: absolute;
+        top: 31rem;
         left: 6.3rem;
-        bottom: 3rem;
         z-index: 10;
         cursor: pointer;
         transition: transform 0.2s ease;
       }
-      .panier:focus-visible {
-        outline: 2px solid black;
-      }
-      
       
       .panier:hover {
         transform : scale(1.2);
@@ -236,24 +202,18 @@
 
       #fondnoir {
         position: relative;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start; /* Aligne tout au début (à gauche) */
-        gap: 0rem;
         width: 100%;
         height: 8rem;
         background-color: black;
         padding: 2rem 7rem;
         box-sizing: border-box;        /*pour ne pas compter le padding dans la taille et éviter le débordement*/
-      }
-      .textinfo {
-        color: rgb(255, 255, 255);
-        font-family: Arial, sans-serif;
-      }
-      .contact {
-        margin-left: 20rem;
-        color: white;
-      }
+     }
+     #fondnoir div {
+      color: white;
+      font-family: Arial, sans-serif;
+      margin-bottom: 10px;
+     }
+
       
 
       

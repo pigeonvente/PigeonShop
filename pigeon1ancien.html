@@ -1,47 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <title>Pigeon_voyageur_blanc</title>
-        <!--titre de l'onglet-->
-    </head>
-    <body>
-        <div class="menu">
-          <a href="notrehistoire.html" id="logo" class="nobbo">    <!--défini le bouton du logo avec une classe par défaut--> 
-            <img src="pigeonlogo.png" alt="Pigeon">     <!--src=image à charger, alt=texte en cas d'erreur--> 
-          </a>
-          <a href="pigeonsite.html" class="menubtn menubtn1">Menu</a>
-          <a href="notrehistoire.html" class="menubtn">Notre histoire</a>
-          <a href="login.html" class="monpanier">Mon panier</a>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Pigeon_messager_bleu</title>
+    <!--titre de l'onglet-->
+  </head>
+  <body>
+    <div class="menu">
+      <a href="notrehistoire.html" id="logo" class="nobbo">    <!--défini le bouton du logo avec une classe par défaut--> 
+        <img src="pigeonlogo.png" alt="Pigeon">     <!--src=image à charger, alt=texte en cas d'erreur--> 
+      </a>
+      <a href="pigeonsite.html" class="menubtn menubtn1">Menu</a>
+      <a href="notrehistoire.html" class="menubtn">Notre histoire</a>
+      <a href="login.html" class="monpanier">Mon panier</a>
+    </div>
+    <div class="menudeg"></div>
+
+    <div class="produit">
+        <div class="pigeonimg">
+            <img src="pigeon1.png" alt="pigeon">
         </div>
-        
-        <div class="menudeg"></div>
-        
-        <div class="produits">
-          <div class="pigeonimg">
-            <img src="pigeon2.png" alt="pigeon">
-          </div>    
-          <div class="infos">
-            <p class="title">Pigeon voyageur blanc</p>
+        <div class="infos">
+            <p class="title">Pigeon messager bleu</p>
             <div class="stars">
               <img src="3stars.png" alt="3 stars">
             </div>
-            <div class="scrolldesc">
-              <div class="desc">
+            <div class="desc">
                 Âge : 1 an<br>
-                Lieu d'élevage : Chine<br>
+                Lieu d'élevage : France<br>
                 Sexe : Mâle<br>
-                Race : Culbutant de Lille Blanc<br>
-                Taille : 26cm<br>
+                Race : Pigeon Biset<br>
+                Taille : 31cm<br>
                 <br>
-                Prix : 45€
-              </div>
-              <div class="texte">
-                Le nom de ce pigeon vient de sa capacité à faire des saltos arrière en plein vol. Il est très dynamique.
-              </div>
-            </div>   
-          </div>
+                Prix : 25€
+            </div>
         </div>
+    </div>
 
     <div class="panier">
         <a href="login.html">
@@ -50,14 +44,10 @@
     </div>
       
 
-      <div id="baspage"></div>                         <!--repère pour scroller en bas de page automatiquement si le bouton 'découvrir' est cliqué-->
       <div id="fondnoir">
-        <div class="textinfo">
-          Edgar, Antoine, Jianing<br>
-          2E StJdL<br>
-          Certaines images ont été générées avec des IA.
-        </div>
-        <a class="contact" href="https://forms.office.com/Pages/ResponsePage.aspx?id=LRErB1ro4ECRas-oLsTmIGsKKW1nI4dEgHRkYGL-qypUNEpSRDVTTDMzUk9CUUFISFNWT0gzOFQ5Ry4u">Nous contacter</a>
+        Edgar, Antoine, Jianing<br>
+        2E StJdL<br>
+        Certaines images ont été générées avec des IA.
       </div>
         
       </div>
@@ -69,7 +59,6 @@
         margin: 0;                   /*Enlève les bords blancs autour de la page*/
         padding-top: 9rem;
         background: linear-gradient(to bottom, #bdbdbd 0%, #f5f5f5 100%);   /*dégradé de gris*/
-
       }
       
 
@@ -143,33 +132,19 @@
         height: 100px;
       }
      
-      .produits {
-        max-width: 1200px;
-        display: flex;
-        flex-direction: row;
-        gap: 2rem;
-        margin: 4rem auto 3rem;
-        align-items: flex-end;
-        position: relative;
-      }
-      .infos {
-        margin-left: 3rem;
+      .produit {
         width: 90%;
+        margin: 3rem auto 5rem;
         display: flex;
-        align-items: flex-start;
-        gap: 0rem;
-        flex-direction: column;  /* flex de haut en bas*/
-      }
-
-      .scrolldesc {
-        max-height: 25rem;   /*limite la hauteur */
-        overflow-y: auto;   /*si le texte déborde, permet le scroll vertical uniquement ici */
+        justify-content: center; /* CENTRE horizontalement l'image et le texte */
+        align-items: center;     /* CENTRE verticalement l'img et le txt*/
+        gap: 10rem;
       }
       
       .pigeonimg {
         max-width: 800px;
+        margin-top: 5rem;
         transition: transform 0.3s ease;
-        position: relative;
       }
       .pigeonimg img {
         width: 30rem;
@@ -178,13 +153,9 @@
       .pigeonimg:hover {
         transform: scale(1.1);
       }
-      
-      .stars {
-        margin-bottom: 2rem;
-      }
-      
-      .stars img {
-        width: 15rem;
+
+      .stars{
+        width: 5rem;
       }
 
       .desc {
@@ -196,19 +167,7 @@
         padding-left: 2rem;
         box-sizing: border-box;
         font-size:1.5rem;
-      }
-      .texte {
-        margin-top: 2rem;
-        width: 30rem;
-        height: 15rem;
-        background-color: white;
-        border-radius: 1rem;
-        padding-top: 1rem;
-        padding-left: 2rem;
-        box-sizing: border-box;
-        font-size:1.5rem;
         margin-top: 3rem;
-        flex-shrink: 0
       }
 
 
@@ -237,25 +196,14 @@
 
       #fondnoir {
         position: relative;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start; /* Aligne tout au début (à gauche) */
-        gap: 0rem;
         width: 100%;
         height: 8rem;
         background-color: black;
         padding: 2rem 7rem;
         box-sizing: border-box;        /*pour ne pas compter le padding dans la taille et éviter le débordement*/
-      }
-      .textinfo {
         color: white;
         font-family: Arial, sans-serif;
-        margin-right: 0rem;
-      }
-      .contact {
-        margin-left: 20rem;
-        color: white;
-      }
+    }
 
       
     </style>
