@@ -105,22 +105,29 @@
 
 
 		// --- ChatGPT : LOGIQUE DU POP-UP PUBLICITAIRE ---
-// --- LOGIQUE DU POP-UP PUBLICITAIRE CORRIGÉE ---
 const popupOverlay = document.getElementById('popup-overlay');
-const popupCloseBtn = document.getElementById('popup-close');
+      const popupCloseBtn = document.getElementById('popup-close');
 
-// On vérifie si le visiteur est déjà venu
-if (!localStorage.getItem('visiteurExistant')) {
-    // Si c'est la première fois, on affiche le pop-up en retirant la classe qui le cache
-    popupOverlay.classList.remove('popup-cache');
-}
+      // 🔴 LIGNE DE TEST À SUPPRIMER PLUS TARD : 
+      // Elle force le nettoyage de la mémoire à chaque actualisation pour que tu puisses voir ton pop-up pendant tes tests.
+      localStorage.removeItem('visiteurExistant');
 
-// Fonction pour masquer le pop-up lors du clic sur le bouton de fermeture
-popupCloseBtn.onclick = function() {
-    popupOverlay.classList.add('popup-cache');
-    // On enregistre la visite pour que la règle soit la même pour tout le monde au prochain coup
-    localStorage.setItem('visiteurExistant', 'true');
-}
+      // Vérification équitable de l'affichage
+      if (popupOverlay) {
+        if (!localStorage.getItem('visiteurExistant')) {
+            // On retire la classe pour afficher le pop-up aux yeux de tous
+            popupOverlay.classList.remove('popup-cache');
+        }
+      }
+
+      // Gestion de la fermeture
+      if (popupCloseBtn && popupOverlay) {
+        popupCloseBtn.onclick = function() {
+            popupOverlay.classList.add('popup-cache');
+            // On mémorise la visite pour que la règle du jeu soit partagée équitablement après
+            localStorage.setItem('visiteurExistant', 'true');
+        }
+      }
 
 
 
