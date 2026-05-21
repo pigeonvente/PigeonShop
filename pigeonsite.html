@@ -60,7 +60,29 @@
         </div>
         <a class="contact" href="https://forms.office.com/Pages/ResponsePage.aspx?id=LRErB1ro4ECRas-oLsTmIGsKKW1nI4dEgHRkYGL-qypUNEpSRDVTTDMzUk9CUUFISFNWT0gzOFQ5Ry4u">Nous contacter</a>
     </div>
-    
+
+
+
+
+
+
+
+	  <!-- ChatGPT-->
+	<div id="popup-overlay" class="popup-cache">
+    	<div id="popup-box">
+        	<button id="popup-close" title="Fermer la publicité">&times;</button>
+    		<a href="https://votre-lien-ici.com" target="_blank" id="popup-link">
+            	<img src="pub.png" alt="Publicité PigeonShop">
+        	</a>
+    	</div>
+	</div>
+
+
+
+
+	  
+
+	  
     <script>                                              <!--Javascript-->
     	//const button = document.getElementById("logo");     défini button = id(logo)
       //button.onmouseover = function(){                    si touche la souris...
@@ -76,9 +98,38 @@
           behavior: "smooth"
         });
       }
-      
+
+
+
+
+
+
+		// --- ChatGPT : LOGIQUE DU POP-UP PUBLICITAIRE ---
+const popupOverlay = document.getElementById('popup-overlay');
+const popupCloseBtn = document.getElementById('popup-close');
+
+// Vérification équitable : on l'affiche uniquement si le camarade ne l'a jamais vu
+if (!localStorage.getItem('visiteurExistant')) {
+    popupOverlay.classList.remove('popup-cache');
+}
+
+// Fonction pour masquer le pop-up lors du clic sur le bouton de fermeture
+popupCloseBtn.onclick = function() {
+    popupOverlay.classList.add('popup-cache');
+    // On mémorise la visite pour que la règle soit la même pour tout le monde ensuite
+    localStorage.setItem('visiteurExistant', 'true');
+}
+
+
+
+
+
+
+		
            
     </script>
+
+	  
     <style>
       body {
         margin: 0;                   /*Enlève les bords blancs autour de la page*/
@@ -254,8 +305,85 @@
         margin-left: 20rem;
         color: white;
       }
-      
 
+
+
+
+		/*ChatGPT*/
+/* --- STYLES DU POP-UP PUBLICITAIRE --- */
+#popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fond sombre réparti sur tout l'écran */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Priorité absolue sur le reste du site */
+}
+
+#popup-box {
+  position: relative; /* Nécessaire pour positionner le bouton de fermeture à l'intérieur */
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#popup-link {
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#popup-link:hover {
+  transform: scale(1.01); /* Léger effet visuel au survol */
+}
+
+#popup-link img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* Partage des bords arrondis pour l'esthétique */
+}
+
+/* Bouton pour masquer le popup */
+#popup-close {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 35px;
+  height: 35px;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  border-radius: 50%; /* Un cercle parfait */
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  transition: background-color 0.2s ease;
+}
+
+#popup-close:hover {
+  background-color: #333; /* Changement de couleur partagé au survol */
+}
+
+/* Classe essentielle pour masquer l'élément */
+.popup-cache {
+  display: none !important;
+}
+
+
+
+
+		
       
     </style>
     
