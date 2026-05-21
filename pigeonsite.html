@@ -105,18 +105,20 @@
 
 
 		// --- ChatGPT : LOGIQUE DU POP-UP PUBLICITAIRE ---
+// --- LOGIQUE DU POP-UP PUBLICITAIRE CORRIGÉE ---
 const popupOverlay = document.getElementById('popup-overlay');
 const popupCloseBtn = document.getElementById('popup-close');
 
-// Vérification équitable : on l'affiche uniquement si le camarade ne l'a jamais vu
+// On vérifie si le visiteur est déjà venu
 if (!localStorage.getItem('visiteurExistant')) {
+    // Si c'est la première fois, on affiche le pop-up en retirant la classe qui le cache
     popupOverlay.classList.remove('popup-cache');
 }
 
 // Fonction pour masquer le pop-up lors du clic sur le bouton de fermeture
 popupCloseBtn.onclick = function() {
     popupOverlay.classList.add('popup-cache');
-    // On mémorise la visite pour que la règle soit la même pour tout le monde ensuite
+    // On enregistre la visite pour que la règle soit la même pour tout le monde au prochain coup
     localStorage.setItem('visiteurExistant', 'true');
 }
 
